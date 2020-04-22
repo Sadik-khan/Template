@@ -33,7 +33,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-user" aria-hidden="true"></i>
                         </span>
-                        <input autocomplete="off" data-parsley-errors-container="#username_error" type="text" class="form-control" required placeholder="Enter Serve Name" name="username" id="username">
+                        <input autocomplete="off" data-parsley-errors-container="#username_error" type="text" class="form-control" required placeholder="Enter Database User Name" name="username" id="username">
                     </div>
                     <span id="username_error"></span>
                 </div>
@@ -44,7 +44,7 @@
                         <span class="input-group-addon">
                             <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                         </span>
-                        <input autocomplete="off" type="password" class="form-control" placeholder="Enter Serve Name" name="password" id="password">
+                        <input autocomplete="off" type="password" class="form-control" placeholder="Enter Database Password" name="password" id="password">
                     </div>
                 </div>
             </div>

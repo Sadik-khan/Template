@@ -1,18 +1,18 @@
+// 
+var _componentDatePicker = function () {
+    $(".take_date").dateDropper({
+        format: "F S, Y",
+        dropWidth: 200,
+        dropPrimaryColor: "#1abc9c",
+        dropBorder: "1px solid #1abc9c",
+        lock: "from"
+    });
+}
+
 var _componentSelect2Normal = function() {
 
-    $('.select').select2({width:'100%'});
+    $('.select').select2();
 };
-
-var _componentDatePicker = function() {
-$('.date').datepicker({
-    format: "dd/mm/yyyy",
-    autoclose: true,
-    todayHighlight: true
-});
-
-};
-
-// $('.date').attr('readonly', true);
 
 var _componentDatefPicker = function() {
     $('.date').attr('readonly', true);
@@ -93,10 +93,9 @@ var _formValidation = function() {
             dataType: 'JSON',
             success: function(data) {
                 if (data.status == 'danger') {
-                    toastr.error(data.message);
-
+                    notify(data.message, 'danger');
                 } else {
-                    toastr.success(data.message);
+                    notify(data.message, 'success');
                     $('#submit').show();
                     $('#submiting').hide();
                     $('#content_form')[0].reset();
@@ -141,12 +140,11 @@ var _formValidation = function() {
                             });
                         }
                         // $('#' + first_item).after('<div class="ajax_error" style="color:red">' + value + '</div');
-                        toastr.error(value);
+                        notify(value, 'danger');
                         i++;
                     });
                 } else {
-                    toastr.warning(jsonValue.message);
-
+                    notify(jsonValue.message, 'danger');
                 }
                 _componentSelect2Normal();
                 $('#submit').show();
@@ -357,40 +355,8 @@ $(document).ready(function() {
             processData: false,
             dataType: 'JSON',
             success: function(data) {
-                notify(data.message, 'success');
-                setTimeout(function() {
-                    window.location.href = data.goto;
-                }, 2000);
-            },
-            error: function(data) {
-                var jsonValue = $.parseJSON(data.responseText);
-                const errors = jsonValue.errors
-                var i = 0;
-                $.each(errors, function(key, value) {
-                    notify(value, 'danger');
-                    i++;
-                });
-            }
-        });
-    });
+                toastr.success(data.message);
 
-    /*
-     * For Lock
-     */
-    $(document).on('click', '#lock', function(e) {
-        e.preventDefault();
-        $("#loader").show('fade');
-        var url = $(this).data('url');
-        alert(url);
-        $.ajax({
-            url: url,
-            method: 'POST',
-            contentType: false, // The content type used when sending data to the server.
-            cache: false, // To unable request pages to be cached
-            processData: false,
-            dataType: 'JSON',
-            success: function(data) {
-                notify(data.message, 'success');
                 setTimeout(function() {
                     window.location.href = data.goto;
                 }, 2000);
@@ -400,7 +366,7 @@ $(document).ready(function() {
                 const errors = jsonValue.errors
                 var i = 0;
                 $.each(errors, function(key, value) {
-                    notify(value, 'danger');
+                    toastr.success(value);
                     i++;
                 });
             }

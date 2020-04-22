@@ -3,6 +3,7 @@
 Route::group(['middleware' => ['install']], function () {
 
     Route::GET('/home', 'AdminController@index')->name('admin.home');
+    Route::post('change_personal_info', 'AdminController@change_personal_info')->name('admin.change_personal_info');
 
     Route::get('login/{service}', 'LoginController@redirectToProvider');
     Route::get('login/{service}/callback', 'LoginController@handleProviderCallback');

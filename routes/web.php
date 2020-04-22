@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //  :::::::::::::::::::::: Check System Is Installed OR Not :::::::::::::::::::::::::::::::::::::::::::::::::
-Route::group(['middleware' => ['install']], function () {
+Route::group(['middleware' => ['install', 'ipFilter']], function () {
 
     // ::::::::::::::::::::::::::::::::::: This Route Group is for FrontEnd Setup :::::::::::::::::::::::::::
     Route::get('/', 'Frontend\FrontEndController@index')->name('index');
@@ -22,13 +22,28 @@ Route::group(['middleware' => ['install']], function () {
 	
     });
 
-    // Settings
-    Route::get('settings', 'Admin\SettingsController@index')->name('admin.settings');
-    Route::get('settings/configure', 'Admin\SettingsController@configure')->name('admin.settings.configure');
+    // Admin Route
+    Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    
+        // Settings Route
+        Route::group(['as' => 'settings.', 'prefix' => 'settings'], function () {
+            Route::get('', 'SettingsController@index')->name('index');
+            Route::get('/configure', 'SettingsController@configure')->name('configure');
+            Route::post('/change-settings', 'SettingsController@change_settings')->name('change_settings');
+            Route::get('/open_ip_filter', 'SettingsController@open_ip_filter')->name('open_ip_filter');
+        });
+        
+    });
 
+    
+    // ::::::::::::::::::::::::::::::  IP Block Route ::::::::::::::::::::::::::::::::::::::::::::::::
+    Route::get('ip-block', function() {
+        return view('error.ip');
+    })->name('ip_block');
 
 });
 
+// :::::::::::::::::::::::::: Installation Route :::::::::::::::::::::::::::::::::::::::::::::::::
 Route::get('pre-setup', 'Install\InstallController@index');
 Route::get('pre-setup/database', 'Install\InstallController@database');
 Route::post('pre-setup/process_install', 'Install\InstallController@process_install');

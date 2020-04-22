@@ -17,7 +17,7 @@
     @include('_partials.backend.admin.stylesheet')
 </head>
 
-<body>
+<body class="{{ get_option('navbar_position') == 'bottom' ? 'menu-bottom' : '' }}">
 <!-- Pre-loader start -->
 <div class="theme-loader">
     <div class="ball-scale">
@@ -56,7 +56,7 @@
     </div>
 </div>
 <!-- Pre-loader end -->
-<div id="pcoded" class="pcoded">
+<div id="pcoded" class="pcoded iscollapsed" vertical-nav-type="offcanvas">
     <div class="pcoded-overlay-box"></div>
     <div class="pcoded-container navbar-wrapper">
 
@@ -164,6 +164,24 @@
 <![endif]-->
 <!-- Warning Section Ends -->
 @include('_partials.backend.admin.script')
+<script>
+    // $( document ).ready(function() {
+    //     $( "#pcoded" ).pcodedmenu({
+    //         HeaderBackground : 'theme1',
+    //         NavbarBackground : 'theme1',
+    //         LHeaderBackground : 'theme1',
+    //         menutype: 'st6',  // st5 : st6
+    //         NavbarBackground : 'themelight1',  //themelight1 : theme
+    //         FixedHeaderPosition : true, // true : false
+    //         ActiveItemBackground : 'theme6', // theme1 - theme12
+    //         HeaderBackground : 'theme6', //theme 1 - 9
+    //         LHeaderBackground : 'theme3', // theme1 -theme6
+    //         VerticalSubMenuItemIconStyle : 'style2',
+    //     });
+
+        
+    // });
+</script>
 </body>
 
 </html>

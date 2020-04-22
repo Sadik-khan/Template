@@ -1,15 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models\IP;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Setting extends Model
+class IpList extends Model
 {
-
     use LogsActivity;
-
-    protected  $guarded = ['name'];
-
 }

@@ -4,6 +4,14 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 <!-- Required Fremwork -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+<!-- Date-time picker css -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datetimepicker.css') }}">
+<!-- Date-range picker css  -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/daterangepicker.css') }}">
+<!-- Date-Dropper css -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/datedropper.min.css') }}">
+<!-- Data Table Css -->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/dataTables.bootstrap4.min.css') }}">
 <!-- themify-icons line icon -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/themify-icons.css') }}">
 <!-- ico font -->
@@ -20,6 +28,9 @@
 <link type="text/css" rel="stylesheet" href="{{ asset('css/font-awosome.min.css') }}"/>
 {{-- font Awosome --}}
 <link type="text/css" rel="stylesheet" href="{{ asset('css/swithery.min.css') }}"/>
+<!-- Select -->
+<link type="text/css" rel="stylesheet" href="{{ asset('css/select2.min.css') }}"/>
+
 <!-- Style.css -->
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/admin/css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/admin/css/jquery.mCustomScrollbar.css') }}">

@@ -1,4 +1,3 @@
-"use strict";
 $(document).ready(function() {
     var $window = $(window);
     //add id to main menu for mobile menu start
@@ -181,7 +180,7 @@ $('#styleSelector').append('' +
     '</div>' +
     '<ul>' +
         '<li>' +
-            '<p class="selector-title main-title st-main-title"><b>Adminty </b>Customizer</p>' +
+            '<p class="selector-title main-title st-main-title"><b>Template </b>Customizer</p>' +
             '<span class="text-muted">Live customizer with tons of options</span>'+
         '</li>' +
         '<li>' +

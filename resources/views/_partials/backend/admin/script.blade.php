@@ -21,9 +21,22 @@
 <script type="text/javascript" src="{{ asset('js/swichery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/install/js/growl.min.js') }}"></script>
 
-<script src="{{ asset('assets/backend/admin/js/pcoded.min.js') }}"></script>
+<script src="{{ asset('js/pcoded.min.js') }}"></script>
 <script src="{{ asset('assets/backend/admin/js/vartical-layout.min.js') }}"></script>
 <script src="{{ asset('assets/backend/admin/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+
+<!-- Bootstrap date-time-picker js -->
+<script type="text/javascript" src="{{ asset('js/moment-with-locales.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+<!-- Date-range picker js -->
+<script type="text/javascript" src="{{ asset('js/daterangepicker.js') }}"></script>
+<!-- Date-dropper js -->
+<script type="text/javascript" src="{{ asset('js/datedropper.min.js') }}"></script>
+<!-- Select 2 -->
+<script type="text/javascript" src="{{ asset('js/select2.min.js') }}"></script>
+
+
 <!-- Custom js -->
 <script type="text/javascript" src="{{ asset('assets/backend/admin/js/script.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/backend/admin/js/main.js') }}"></script>

@@ -13,6 +13,6 @@
         </p>
 
         <div class="text-right">Thanks for using our system</div>
-            <div class="text-right"><img src="{{ asset('assets/error/img/main.png') }}" alt="Author Logo"></div>
+            <div class="text-right"><img src="{{ asset('assets/backend/admin/images/main.png') }}" alt="Author Logo"></div>
     </div>
 </div>

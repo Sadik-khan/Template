@@ -1,7 +1,7 @@
-<nav class="navbar header-navbar pcoded-header">
+<nav class="navbar header-navbar pcoded-header" header-theme="theme4">
     <div class="navbar-wrapper">
 
-        <div class="navbar-logo">
+        <div class="navbar-logo" logo-theme="theme4">
             <a class="mobile-menu" id="mobile-collapse" href="#!">
                 <i class="feather icon-menu"></i>
             </a>
@@ -72,7 +72,7 @@
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
-                                <a href="{{ route('admin.settings') }}">
+                                <a href="{{ route('admin.settings.index') }}">
                                     <i class="feather icon-settings"></i> Settings
                                 </a>
                             </li>

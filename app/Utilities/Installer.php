@@ -2,6 +2,7 @@
 
 namespace App\Utilities;
 
+use App\Models\Admin\AdminInformation;
 use App\User;
 use DB;
 use Artisan;
@@ -239,11 +240,17 @@ class Installer
             'name' => $name,
             'email' => $email,
             'password' => $password,
+            'uuid' => Str::uuid(),
+            'image' => 'user.png',
             'username' => $username,
             'remember_token' => Str::random(10),
 			'active'         => true,
 			'created_at' => date('Y-m-d H:i:s'),
 			'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        AdminInformation::create([
+            'admin_id' => $admin->id,
         ]);
 
         self::seed(1);

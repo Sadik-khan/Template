@@ -20,6 +20,8 @@ class CreateAdminsTable extends Migration
             $table->string('username')->unique()->nullable();
             $table->string('password');
             $table->boolean('active')->default(0);
+            $table->string('image')->nullable();
+            $table->string('uuid')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

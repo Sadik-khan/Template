@@ -1,15 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Setting extends Model
+class AdminInformation extends Model
 {
-
     use LogsActivity;
 
-    protected  $guarded = ['name'];
-
+    protected $guarded = [];
 }
